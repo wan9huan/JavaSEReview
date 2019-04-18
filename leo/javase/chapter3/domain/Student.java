@@ -49,7 +49,6 @@ public class Student {
         this.score = score;
     }
 
-
     public String say() {
         return "Student{" +
                 "id=" + id +
