@@ -29,5 +29,11 @@ public class Computer {
         this.memory = memory;
     }
 
-
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "cpu=" + cpu +
+                ", memory=" + memory +
+                '}';
+    }
 }

@@ -4,6 +4,8 @@ import leo.javase.chapter3.domain.*;
 
 import org.junit.Test;
 
+import java.sql.SQLOutput;
+
 
 public class TestClass {
 
@@ -16,7 +18,7 @@ public class TestClass {
     public void testObjectParam(){
 
 
-        Teacher teacher = new Teacher("马萍","女",24);
+        Teacher teacher = new Teacher("马萍","女",24,new Computer(8,64));
         changerGender(teacher);
         System.out.println(teacher.getAge());
     }
@@ -113,4 +115,81 @@ public class TestClass {
         System.out.println(x == y);
 
     }
+
+    @Test
+    public void testTransObject(){
+
+        Teacher teacher = new Teacher();
+        teacher.setAge(24);
+        teacher.setName("王欢");
+        teacher.setGender("男");
+
+        Computer computer = new Computer(4,20);
+
+        teacher.setComputer(computer);
+
+        System.out.println(teacher);
+
+    }
+
+    @Test
+    public void testPersonWithPhone(){
+
+        Phone phone = new Phone("Android","2K");
+        PersonWithPhone personWithPhone = new PersonWithPhone("wanghuan",24,phone);
+        System.out.println(personWithPhone);
+    }
+
+    @Test
+    public void testRandomBetween20And70(){
+
+        int random;
+        for (int i=0;i<10000;i++){
+            random = 20 + (int)(50*Math.random());
+            System.out.println(random);
+        }
+    }
+
+    @Test
+    public void testArrayAvgSumCount(){
+
+        int avg=0;
+        int sum=0;
+        int count=0;
+        int max=0;
+        int min=0;
+
+        int intArry[] = { 1, 3, 5, 7, 9};
+
+        for(int i:intArry) {
+            sum+=i;
+         //   count++;
+        }
+
+        count = intArry.length;
+
+        avg=sum/count;
+
+        //整数相除保留整数
+        System.out.println("元素个数："+count);        //整数相除保留整数
+        System.out.println("总和值："+sum);        //整数相除保留整数
+        System.out.println("平均值："+avg);
+
+
+        for(int i=0; i<intArry.length; i++){
+            if(i==0) {min=intArry[i];max=intArry[i];}
+            if(intArry[i]>max) max = intArry[i];
+            else if(intArry[i]<min) min = intArry[i];
+        }
+
+        System.out.println("最大值:"+max);
+        System.out.println("最小值:"+min);
+
+
+
+
+
+
+    }
+
 }
