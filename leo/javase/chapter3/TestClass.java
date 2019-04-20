@@ -9,6 +9,13 @@ import java.sql.SQLOutput;
 
 public class TestClass {
 
+    public int[] getIntArry(int n){
+
+        int[] intArry = new int[n];
+        for(int i=0; i<intArry.length; i++)
+            intArry[i] = (int)(Math.random()*100);
+        return intArry;
+    }
 
     public void changerGender(Teacher teacher){
         teacher.setAge(18);
@@ -177,7 +184,12 @@ public class TestClass {
 
 
         for(int i=0; i<intArry.length; i++){
-            if(i==0) {min=intArry[i];max=intArry[i];}
+
+            if(i==0) {
+                min=intArry[i];
+                max=intArry[i];
+            }
+
             if(intArry[i]>max) max = intArry[i];
             else if(intArry[i]<min) min = intArry[i];
         }
@@ -192,4 +204,40 @@ public class TestClass {
 
     }
 
+    @Test
+    public void testMaxNumberDeliBySeven(){
+
+        int maxDeliSeven = 0x0FFFFFFF;
+        boolean flag = true;
+
+        while(flag){
+
+            if(maxDeliSeven % 7 == 0) flag = false;
+            else maxDeliSeven--;
+        }
+
+        System.out.println("能被7整除的最大整数是"+maxDeliSeven);
+    }
+
+    @Test
+    public void testFindMaxNumberByIndex(){
+
+        int[] intArry = getIntArry(10);
+
+        int maxIndex = 0;
+        int minIndex = 0;
+
+
+
+        for (int i=0; i<intArry.length; i++){
+            System.out.print(" "+intArry[i]);
+            if(intArry[i]<intArry[maxIndex])
+                maxIndex = i;
+            else if(intArry[i]>intArry[minIndex])
+                minIndex = i;
+        }
+
+        System.out.println("\n最大值序号："+maxIndex);
+        System.out.println("最小值序号："+minIndex);
+    }
 }

@@ -23,7 +23,6 @@ public class TestAbstractFactoryPattern {
     //通过 FactoryProducer类 静态方法 getFactory()获取
     AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
 
-
     @Test
     public void testTestAbstractFactoryPattern(){
 

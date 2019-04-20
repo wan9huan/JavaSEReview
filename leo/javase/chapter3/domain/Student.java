@@ -5,12 +5,12 @@ public class Student {
     private int id;
     private String name;
     private int grade;
-    private int score;
+    private double score;
 
     public Student() {
     }
 
-    public Student(int id, String name, int grade, int score) {
+    public Student(int id, String name, int grade, double score) {
         this.id = id;
         this.name = name;
         this.grade = grade;
@@ -41,11 +41,11 @@ public class Student {
         this.grade = grade;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(double score) {
         this.score = score;
     }
 
@@ -58,4 +58,13 @@ public class Student {
                 '}';
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade=" + grade +
+                ", score=" + score +
+                '}';
+    }
 }
