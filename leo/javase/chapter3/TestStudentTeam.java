@@ -30,6 +30,10 @@ public class TestStudentTeam {
         return stuArr;
     }
 
+    Student[] students = getStudentTeam(100);
+
+
+
     @Test
     public void getBestAndWorstStudentByIndex(){
 
@@ -52,7 +56,7 @@ public class TestStudentTeam {
     }
 
     @Test
-    public void rollStudents(){
+    public void testrollStudents(){
 
         Student[] students = getStudentTeam(100);
 
@@ -66,5 +70,39 @@ public class TestStudentTeam {
 
         for (Student student:students)
         System.out.println(student);
+    }
+
+    @Test
+    public void testCopyArray(){}
+
+    @Test
+    public void testCopyGredeTreeToArray(){
+
+        Student[] students = getStudentTeam(100);
+
+        Student[] stdentsInGradeThree = new Student[100];
+
+        int index=0;
+
+        for(int i=0; i<students.length; i++){
+            if(students[i] != null && students[i].getGrade() == 3)
+            {
+                stdentsInGradeThree[index] = students[i];
+                index++;
+            }
+        }
+
+
+        if(stdentsInGradeThree!=null){
+            for(int i=0; i<stdentsInGradeThree.length; i++){
+                System.out.println(stdentsInGradeThree[i]);
+            }
+        }
+    }
+
+    @Test
+    public void testStudentInGradeThreeSortByBubble(){
+
+
     }
 }
